@@ -19,7 +19,7 @@
  *
  */
 
-/* version 1.0 */
+/* version 1.1 */
 
 #define STR_FORMAT "<span color=\"#FFFFFF\">%s</span>"
 
@@ -55,7 +55,7 @@ static int update_display(DwmStatusPlugin *sp) {
     window_name = error_string;
   }
 
-  char str[256];
+  char str[1024];
 
   sprintf(str, STR_FORMAT, window_name);
 
@@ -64,7 +64,7 @@ static int update_display(DwmStatusPlugin *sp) {
   gtk_widget_size_request(GTK_WIDGET(sp->label), &size); 
   gtk_widget_set_size_request(GTK_WIDGET(sp->label),
                               size.width, -1);
-  if (str != error_string) {
+  if (window_name != error_string) {
     XFree(window_name);
   }
   return 1;
@@ -78,6 +78,8 @@ static int dwmstatus_constructor(Plugin * p, char ** fp) {
 
   sp->timer = g_timeout_add_seconds(1, (GSourceFunc) update_display,
                                     (gpointer) sp);
+
+  p->priv = sp;
 
   GtkWidget *label = gtk_label_new("..");
   sp->label = label;
