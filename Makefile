@@ -24,7 +24,7 @@ package:
 	rm -Rf ${NAME}-${VERSION}
 	mkdir ${NAME}-${VERSION}
 	cp -Rf README Makefile ${INPUT} COPYING check_required.sh \
-               install.sh lxpanel \
+               install.sh lxpanel dwmstatusda.c \
                ${NAME}-${VERSION}
 	tar czvf ${NAME}-${VERSION}.tar.gz \
 		 ${NAME}-${VERSION}
