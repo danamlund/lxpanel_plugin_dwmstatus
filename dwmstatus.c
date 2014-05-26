@@ -1,7 +1,7 @@
 /**
  * dwmstatus plugin to lxpanel
  *
- * Copyright (C) 2012 by Dan Amlund Thomsen <dan@danamlund.dk>
+ * Copyright (C) 2014 by Dan Amlund Thomsen <dan@danamlund.dk>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
 #include <gdk/gdk.h>
 #include <glib/gi18n.h>
 
-#include <lxpanel/plugin.h>
+#include "lxpanel/plugin.h"
 
 typedef struct {
   unsigned int timer;
