@@ -60,10 +60,10 @@ static int update_display(DwmStatusPlugin *sp) {
   sprintf(str, STR_FORMAT, window_name);
 
   gtk_label_set_markup(GTK_LABEL(sp->label), str);
-  GtkRequisition size;
-  gtk_widget_size_request(GTK_WIDGET(sp->label), &size); 
-  gtk_widget_set_size_request(GTK_WIDGET(sp->label),
-                              size.width, -1);
+  /* GtkRequisition size; */
+  /* gtk_widget_size_request(GTK_WIDGET(sp->label), &size);  */
+  /* gtk_widget_set_size_request(GTK_WIDGET(sp->label), */
+  /*                             size.width, -1); */
   if (window_name != error_string) {
     XFree(window_name);
   }
